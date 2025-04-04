@@ -273,6 +273,7 @@ input{
     border-radius: 12px;
     box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
 }
+
 .about-left img{
     width: 450px;
 }
@@ -292,6 +293,11 @@ input{
     width: 450px;
 }
 
+.about-text p {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 50px;
+}
 
 #footer_items {
     display: flex;
