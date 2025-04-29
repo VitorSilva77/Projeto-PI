@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 body {
     margin: 0;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: poppinsregular;
 }
 
 body *{
@@ -29,7 +28,7 @@ body *{
 }
 .left-login > h1 {
     font-size: 3vw;
-    color: orange;
+    color: rgb(255, 71, 20);
 }
 
 .left-login-image{

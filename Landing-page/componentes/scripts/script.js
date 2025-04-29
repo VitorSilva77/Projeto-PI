@@ -1,8 +1,4 @@
 $(document).ready(function() {
-    $('#mobile_btn').on('click', function () {
-        $('#mobile_menu').toggleClass('active');
-        $('#mobile_btn').find('i').toggleClass('fa-x');
-    });
 
     const sections = $('section');
     const navItems = $('.nav-item');
@@ -40,20 +36,31 @@ $(document).ready(function() {
         distance: '20%'
     });
 
-    ScrollReveal().reveal('.dish', {
+    ScrollReveal().reveal('.itens', {
         origin: 'left',
         duration: 2000,
         distance: '20%'
     });
 
-    ScrollReveal().reveal('#testimonial_chef', {
+    ScrollReveal().reveal('.about-left', {
         origin: 'left',
         duration: 1000,
         distance: '20%'
     })
 
-    ScrollReveal().reveal('.feedback', {
+    ScrollReveal().reveal('.about-right', {
         origin: 'right',
+        duration: 1000,
+        distance: '20%'
+    })
+
+    ScrollReveal().reveal('.contact-itens1', {
+        origin: 'right',
+        duration: 1000,
+        distance: '20%'
+    })
+    ScrollReveal().reveal('.contact-itens2', {
+        origin: 'left',
         duration: 1000,
         distance: '20%'
     })

@@ -123,6 +123,7 @@ input , textarea{
     border-radius: 20px;
     border: none;
     font-size: 15px;
+    border-color: black;
 }
 
 textarea {
@@ -130,14 +131,15 @@ textarea {
     resize: none;
     width: 100%;
     padding:  20px 15px;
+    border-color: black;
 }
 
 input:focus {
-    border-color: black;
+    border-color: rgb(255, 71, 20);
 }
 
 textarea:focus {
-    border-color: black;
+    border-color: rgb(255, 71, 20);
 }
 
 input::placeholder {
@@ -388,7 +390,6 @@ textarea:not(:placeholder-shown)::placeholder {
 
 .contact-description{
     display: flex;
-    width: 600px;
     align-items: center;
     flex-direction: column;
     gap: 20px;
@@ -396,30 +397,47 @@ textarea:not(:placeholder-shown)::placeholder {
     padding: 15px;
     border-radius: 12px;
     box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    max-height: 350px;
 }
 
-#form-contact{
-    max-width: 500px;
-    margin: 0 auto;
+.contact-itens1{
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
+    align-items: center;
+    flex-direction: row;
+    gap: 100px;
+    padding: 30px;
+    
 }
 
-#form-contact > input{
-    width: 100%;
-    padding:  20px 15px;
+.contact-itens1 > a{
+    color: black;
+    font-size: 70px;
 }
 
-#form-contact > input:focus {
-    border-color: rgb(255, 71, 20);
+.contact-itens1 > a:hover{
+    color: rgb(255, 71, 20);
+    font-size: 80px;
 }
 
-#form-contact > textarea:focus {
-    border-color: rgb(255, 71, 20);;
+.contact-itens2{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 100px;
+    padding: 30px;
 }
+
+.contact-itens2 > a{
+    color: black;
+    font-size: 70px;
+}
+
+.contact-itens2 > a:hover{
+    color: rgb(255, 71, 20);
+    font-size: 80px;
+}
+
 
 #footer_items {
     display: flex;

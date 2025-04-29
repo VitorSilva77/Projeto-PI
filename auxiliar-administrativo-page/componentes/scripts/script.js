@@ -36,32 +36,23 @@ $(document).ready(function() {
         distance: '20%'
     });
 
-    ScrollReveal().reveal('.itens', {
+    ScrollReveal().reveal('.dish', {
         origin: 'left',
         duration: 2000,
         distance: '20%'
     });
 
-    ScrollReveal().reveal('.about-left', {
+    ScrollReveal().reveal('#testimonial_chef', {
         origin: 'left',
         duration: 1000,
         distance: '20%'
     })
 
-    ScrollReveal().reveal('.about-right', {
+    ScrollReveal().reveal('.feedback', {
         origin: 'right',
         duration: 1000,
         distance: '20%'
     })
 
-    ScrollReveal().reveal('.contact-itens1', {
-        origin: 'right',
-        duration: 1000,
-        distance: '20%'
-    })
-    ScrollReveal().reveal('.contact-itens2', {
-        origin: 'left',
-        duration: 1000,
-        distance: '20%'
-    })
+
 });
