@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="./styles/style.css" rel="stylesheet">
+    <link href="./styles/fonts.css" rel="stylesheet">
+    <link href="./styles/media.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./Material/images/teste1.png">
+    <title>Login - PróFuturo</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: rgb(34, 34, 34); 
+            color: white; 
+            font-family: 'poppinsregular', sans-serif;
+        }
+        main#login-section {
+            flex-grow: 1; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        #login-card {
+            background-color: white;
+            color: rgb(34, 34, 34);
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            animation: fadeIn 0.5s ease-out forwards; 
+        }
+        #login-card h2 {
+            color: rgb(34, 34, 34);
+            font-family: 'poppinsmedium', sans-serif;
+            font-size: 2em;
+            margin-top: 0;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        #login-card form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #login-card .input-group {
+            position: relative;
+            width: 100%;
+            margin-bottom: 25px; 
+        }
+        #login-card input {
+            width: 100%;
+            padding: 15px; 
+            height: auto; 
+            border-radius: 10px; 
+            border: 1px solid #ccc;
+            font-size: 1em; 
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'poppinsregular', sans-serif;
+        }
+        #login-card input:focus {
+            border-color: rgb(255, 71, 20); 
+            box-shadow: 0 0 0 3px rgba(255, 71, 20, 0.2); 
+            outline: none; 
+        }
+
+        
+        #login-card input:invalid:not(:placeholder-shown) {
+             border-color: #dc3545; 
+        }
+        #login-card input:invalid:not(:placeholder-shown):focus {
+             box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.2); 
+        }
+
+        
+        #login-card input::placeholder {
+             color: #aaa;
+        }
+
+        #login-card form button[type="submit"] { 
+            width: 100%;
+            padding: 15px;
+            height: auto;
+            font-size: 1.1em;
+            margin-top: 10px;
+            border-radius: 10px; 
+            background-color: rgb(255, 71, 20);
+            color: white;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease; 
+            font-family: 'poppinsmedium', sans-serif;
+        }
+        #login-card form button[type="submit"]:hover {
+            background-color: #ff6a3d; 
+        }
+        #login-card form button[type="submit"]:active {
+            transform: scale(0.98); 
+            background-color: #e05a2d; 
+        }
+
+        #login-card .options {
+            margin-top: 25px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        #login-card .options a {
+            color: rgb(255, 71, 20);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        #login-card .options a:hover {
+            text-decoration: underline;
+        }
+
+        
+        footer {
+             margin-top: auto; 
+             padding-top: 30px;
+             border-top: 1px solid rgba(255, 255, 255, 0.1);
+             background-color: rgb(34, 34, 34);
+        }
+        #footer_items {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 80px 24px 80px;
+            align-items: center;
+        }
+        #copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            font-size: 0.9em;
+        }
+        .social-media-buttons {
+            display: flex;
+            gap: 18px;
+        }
+        .social-media-buttons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            font-size: 1.2rem;
+            border-radius: 50%;
+            text-decoration: none;
+            color: white;
+            transition: background-color .3s ease, color 0.3s ease;
+        }
+        .social-media-buttons a:hover {
+            background-color: rgb(255, 71, 20);
+            color: white;
+        }
+        
+        @media screen and (max-width: 768px) {
+             #footer_items {
+                 flex-direction: column;
+                 gap: 20px;
+                 padding-left: 20px;
+                 padding-right: 20px;
+             }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main id="login-section">
+        <div id="login-card">
+            <img src="./Material/images/teste1.png" alt="Logo PróFuturo" style="width: 50px; margin-bottom: 20px;">
+            <h2>Acesse sua Conta</h2>
+            <form id="login-form" action="#" method="post"> 
+                <div class="input-group">
+                    <input id="email" type="email" placeholder="Seu E-mail" required>
+                </div>
+                <div class="input-group">
+                    <input id="password" type="password" placeholder="Sua Senha" required>
+                </div>
+                
+                <p id="login-error-message" style="color: red; display: none; margin-top: -10px; margin-bottom: 15px;"></p>
+                <button type="submit">Entrar</button> 
+            </form>
+            <div class="options">
+                <span>Não tem uma conta? <a href="./index.html#presentation">Inscreva-se</a></span>
+                <br>
+                <a href="#">Esqueceu sua senha?</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="footer_items">
+            <span id="copyright">
+                &copy; 2025 PróFuturo
+            </span>
+            <div class="social-media-buttons">
+                <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/professor_alexandre_custodio?igsh=dGg3MnRteTE5Nm4x" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+    <script src="./scripts/apiService.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('login-form');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const errorMessageElement = document.getElementById('login-error-message');
+            const submitButton = loginForm.querySelector('button[type="submit"]');
+
+            loginForm.addEventListener('submit', async (event) => {
+                event.preventDefault(); 
+
+                const email = emailInput.value;
+                const password = passwordInput.value;
+
+               
+                errorMessageElement.style.display = 'none';
+                errorMessageElement.textContent = '';
+                submitButton.disabled = true;
+                submitButton.textContent = 'Entrando...'; 
+
+                try {
+                    const result = await loginUser(email, password);
+                    console.log('API Login Result:', result);
+
+                    if (result && result.token) {
+                        localStorage.setItem('authToken', result.token);
+                        console.log('Token salvo:', result.token);
+                            window.location.href = '/dashboard.html'; 
+                        alert('Login bem-sucedido! (Redirecionamento não implementado neste exemplo)');
+                    } else if (result && result.success === true) {
+                         alert('Login bem-sucedido! (Sem token retornado)');
+                    } else {
+                        const message = result?.message || 'Falha no login. Verifique suas credenciais.';
+                        throw new Error(message);
+                    }
+
+                } catch (error) {
+                    errorMessageElement.textContent = error.message || 'Ocorreu um erro inesperado durante o login.';
+                    errorMessageElement.style.display = 'block';
+                    console.error('Erro detalhado no formulário de login:', error);
+
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Entrar';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

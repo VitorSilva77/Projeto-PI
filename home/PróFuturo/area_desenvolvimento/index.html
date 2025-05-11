@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="./styles/style.css" rel="stylesheet">
+    <link href="./styles/fonts.css" rel="stylesheet">
+    <link href="./styles/media.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./Material/images/teste1.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./componentes/scripts/script.js"></script>
+    <title>PróFuturo</title>
+</head>
+
+<body>
+    <header>
+
+        <div class="title">
+                <img src="./Material/images/teste1.png" alt="">
+
+            <div class="text-title">
+                <h1>Estudo</h1>
+                <h1>Expansivo</h1>
+            </div>
+        </div>
+
+        <ul id="nav_list">
+            <li class="nav-item active">
+                <a href="#presentation">Início</a>
+            </li>
+            <li class="nav-item">
+                <a href="#catalogo">Catálogo</a>
+            </li>
+            <li class="nav_item">
+                <a href="#about">Sobre</a>
+            </li>
+            <li class="nav_item">
+                <a href="#contact">Contato</a>
+            </li>
+                <a href="./login.html" id="inscreva-se-btn"><li>Já tem uma conta?</li></a>
+        </ul>
+    </header>
+
+    <section id="presentation">
+        <aside>
+            <h2><span>Inscreva-se agora</span></h2>
+            <h2>na PróFuturo</h2>
+            <p>
+                O conhecimento transforma realidades. Dê o primeiro passo para o seu futuro agora
+            </p>
+            <form id="registration-form">
+                <input id="register-name" type="text" placeholder="Nome" required>
+                <input id="register-email" type="email" placeholder="E-mail" required>
+                <input id="register-password" type="password" placeholder="Senha" required minlength="6"> 
+                
+                <p id="register-message" style="color: green; display: none; margin-top: 10px;"></p>
+                <p id="register-error-message" style="color: red; display: none; margin-top: 10px;"></p>
+                <input type="submit" value="Enviar">
+            </form>
+        </aside>
+
+        <article>
+            <img src="./Material/images/Education.svg" alt="Cerebro-Pensante">
+        </article>
+
+    </section>
+
+    <section id="Mentions">
+        <div id="citacoes">
+            <div class="citacao">
+                <img src="./Material/images/thinking.svg" alt="Reflexiva">
+                <div class="frase">
+                    <p>Aristóteles – "A educação tem raízes amargas, mas os seus frutos são doces."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalogo">
+        <h2 class="section-title">Catálogo</h2>
+        <h3 class="section-subtitle">Nossos cursos especiais</h3>
+        
+        <div id="catalogs" class="catalogs-container">
+            <div class="itens">
+                <div class="itens-heart">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <img src="./Material/images/auxiliar-administrativo.svg" alt="Auxiliar Administrativo">
+                <h3 class="course-title">Auxiliar Administrativo</h3>
+                <span class="course-description">Desenvolva habilidades essenciais para atuar no setor administrativo...</span>
+                <div class="course-price">
+                    <h4>R$550,00</h4>
+                    <button class="btn-default">
+                        <a href="./course_template.html">Tenho Interesse</a>
+                    </button>
+                </div>
+            </div>
+            <div class="itens">
+                <div class="itens-heart">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <img src="./Material/images/Secretariado-Basico.svg" alt="Secretariado Básico">
+                <h3 class="course-title">Secretariado Básico</h3>
+                <span class="course-description">Aprenda as principais funções de um secretário, incluindo gestão de agenda...</span>
+                <div class="course-price">
+                    <h4>R$480,00</h4>
+                    <button class="btn-default">
+                        <a href="./secretariado_basico.html">Tenho Interesse</a>
+                    </button>
+                </div>
+            </div>
+            <div class="itens">
+                <div class="itens-heart">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <img src="./Material/images/vendas-varejo.svg" alt="Vendas no Varejo">
+                <h3 class="course-title">Vendas no Varejo</h3>
+                <span class="course-description">Domine técnicas de vendas e atendimento ao cliente para se destacar no varejo...</span>
+                <div class="course-price">
+                    <h4>R$600,00</h4>
+                    <button class="btn-default">
+                        <a href="./vendas_varejo.html">Tenho Interesse</a>
+                    </button>
+                </div>
+            </div>
+            <div class="itens">
+                <div class="itens-heart">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <img src="./Material/images/aprenda-youtube.svg" alt="Aprenda a ser Youtuber">
+                <h3 class="course-title">Aprenda a ser Youtuber</h3>
+                <span class="course-description">Descubra como criar, editar e gerenciar um canal de sucesso no YouTube...</span>
+                <div class="course-price">
+                    <h4>R$750,00</h4>
+                    <button class="btn-default">
+                        <a href="./aprenda_youtube.html">Tenho Interesse</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+
+    <section id="about">
+
+        <h2 class="section-title">Sobre</h2>
+        <h3 class="section-subtitle">Conheça nossa historia</h3>
+
+        <div id="about-card">
+            <div class="about-left">
+                <img src="./Material/images/founder-picture-animated-teste1.PNG" alt="">
+                <h3>Conheça nosso fundador</h3>
+                <div class="about-text">
+                    <p>Alexandre Custodio formado em Recursos Humanos, Sênior na arte de lecionar para jovens. 
+                        Passou a maior parte de sua vida auxiliando jovens de sua região a iniciar sua jornada no mercado de trabalho,
+                        passando ensinamentos empresariais e administrativos proporcionando oportunidades a todos.
+                     </p>
+            
+                </div>
+            </div>
+            <div class="about-right">
+                <img src="./Material/images/logo-about.png" alt="Logo-PróFuturo">
+                <h3>PróFuturo</h3>
+                <div class="about-text">
+                    <p> Nascemos de um desejo intrínseco de Alexandre, que visava ajudar cada vez mais jovens
+                        espalhados por todo o Brasil. Não bastava apenas video-aulas, Alexandre anseave mais para seu projeto,
+                        a criação de uma marca, uma linha de pensamento 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2 class="section-title">Contato</h2>
+        <h3 class="section-subtitle">Fale Conosco</h3>
+
+        <div id="contact-card">
+            <div class="contact-description">
+               <div class="contact-itens1">
+                    <a href="https://wa.me/5519997101234" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/professor_alexandre_custodio?igsh=dGg3MnRteTE5Nm4x " target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+               </div>
+               <div class="contact-itens2">
+                    <a href="https://www.facebook.com/professoralexandrecustodio" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+
+                    <a href="mailto:alexandresjbv@yahoo.com.br" target="_blank">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+               </div>
+            </div>
+
+        </div>
+        
+    </section>
+
+    </main>
+    <footer>
+        
+        <div id="footer_items">
+            <span id="copyright">
+                &copy 2025 PróFuturo
+            </span>
+
+            <div class="social-media-buttons">
+                <a href="https://wa.me/5519997101234" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="https://www.instagram.com/professor_alexandre_custodio?igsh=dGg3MnRteTE5Nm4x " target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.facebook.com/professoralexandrecustodio" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const registrationForm = document.getElementById("registration-form");
+            const nameInput = document.getElementById("register-name");
+            const emailInput = document.getElementById("register-email");
+            const passwordInput = document.getElementById("register-password");
+            const messageElement = document.getElementById("register-message");
+            const errorMessageElement = document.getElementById("register-error-message");
+            const submitButton = registrationForm.querySelector("input[type=\"submit\"]");
+
+            registrationForm.addEventListener("submit", async (event) => {
+                event.preventDefault(); // Impede o envio padrão
+
+                const name = nameInput.value;
+                const email = emailInput.value;
+                const password = passwordInput.value;
+
+                // Limpa mensagens anteriores e desabilita botão
+                messageElement.style.display = "none";
+                errorMessageElement.style.display = "none";
+                messageElement.textContent = "";
+                errorMessageElement.textContent = "";
+                submitButton.disabled = true;
+                submitButton.value = "Enviando...";
+
+                try {
+                    // Chama a função de registro da API
+                    const result = await registerUser(name, email, password);
+
+                    console.log("API Register Result:", result);
+
+                    if (result && result.success === true) {
+                        // Exibe mensagem de sucesso e limpa o formulário
+                        messageElement.textContent = result.message || "Registro realizado com sucesso!";
+                        messageElement.style.display = "block";
+                        registrationForm.reset(); // Limpa os campos do formulário
+                    } else {
+                        // Se a API não retornar erro mas indicar falha
+                        const message = result?.message || "Falha no registro.";
+                        throw new Error(message);
+                    }
+
+                } catch (error) {
+                    // Exibe mensagem de erro
+                    errorMessageElement.textContent = error.message || "Ocorreu um erro inesperado durante o registro.";
+                    errorMessageElement.style.display = "block";
+                    console.error("Erro detalhado no formulário de registro:", error);
+                } finally {
+                    // Reabilita o botão
+                    submitButton.disabled = false;
+                    submitButton.value = "Enviar";
+                }
+            });
+        });
+    </script>
