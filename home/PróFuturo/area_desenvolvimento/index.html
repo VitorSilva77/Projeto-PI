@@ -228,64 +228,6 @@
         </div>
     </footer>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/script_requests.js"></script>
 </body>
 </html>
-
-
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const registrationForm = document.getElementById("registration-form");
-            const nameInput = document.getElementById("register-name");
-            const emailInput = document.getElementById("register-email");
-            const passwordInput = document.getElementById("register-password");
-            const messageElement = document.getElementById("register-message");
-            const errorMessageElement = document.getElementById("register-error-message");
-            const submitButton = registrationForm.querySelector("input[type=\"submit\"]");
-
-            registrationForm.addEventListener("submit", async (event) => {
-                event.preventDefault(); // Impede o envio padrão
-
-                const name = nameInput.value;
-                const email = emailInput.value;
-                const password = passwordInput.value;
-
-                // Limpa mensagens anteriores e desabilita botão
-                messageElement.style.display = "none";
-                errorMessageElement.style.display = "none";
-                messageElement.textContent = "";
-                errorMessageElement.textContent = "";
-                submitButton.disabled = true;
-                submitButton.value = "Enviando...";
-
-                try {
-                    // Chama a função de registro da API
-                    const result = await registerUser(name, email, password);
-
-                    console.log("API Register Result:", result);
-
-                    if (result && result.success === true) {
-                        // Exibe mensagem de sucesso e limpa o formulário
-                        messageElement.textContent = result.message || "Registro realizado com sucesso!";
-                        messageElement.style.display = "block";
-                        registrationForm.reset(); // Limpa os campos do formulário
-                    } else {
-                        // Se a API não retornar erro mas indicar falha
-                        const message = result?.message || "Falha no registro.";
-                        throw new Error(message);
-                    }
-
-                } catch (error) {
-                    // Exibe mensagem de erro
-                    errorMessageElement.textContent = error.message || "Ocorreu um erro inesperado durante o registro.";
-                    errorMessageElement.style.display = "block";
-                    console.error("Erro detalhado no formulário de registro:", error);
-                } finally {
-                    // Reabilita o botão
-                    submitButton.disabled = false;
-                    submitButton.value = "Enviar";
-                }
-            });
-        });
-    </script>

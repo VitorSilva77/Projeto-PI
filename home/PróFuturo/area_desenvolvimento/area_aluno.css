@@ -1,0 +1,296 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cinza-claro);
+    color: var(--texto-light);
+    line-height: 1.6;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+body.dark-mode {
+    background-color: var(--cinza-escuro-bg);
+    color: var(--texto-dark);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.main-header {
+    background-color: var(--branco);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color var(--transition-speed) ease;
+}
+body.dark-mode .main-header {
+    background-color: var(--cinza-escuro-card);
+    box-shadow: var(--sombra-dark);
+}
+.main-header .logo {
+    height: 50px;
+}
+.main-nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: var(--texto-light);
+    font-weight: 600;
+    transition: color var(--transition-speed) ease;
+}
+body.dark-mode .main-nav a {
+    color: var(--texto-dark);
+}
+.main-nav a:hover {
+    color: var(--laranja);
+}
+.dark-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    color: var(--texto-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body.dark-mode .dark-toggle {
+    color: var(--texto-dark);
+}
+.dark-toggle svg {
+    transition: fill var(--transition-speed) ease;
+}
+
+.welcome-section {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+}
+.welcome-section h1 {
+    color: var(--laranja);
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+.welcome-section p {
+    font-size: 1.1rem;
+    color: #555;
+}
+body.dark-mode .welcome-section p {
+    color: #bbb;
+}
+
+.cursos-section h2 {
+    text-align: center;
+    color: var(--laranja);
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+}
+.grid-cursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.card-curso {
+    background-color: var(--branco);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+}
+body.dark-mode .card-curso {
+    background-color: var(--cinza-escuro-card);
+    box-shadow: var(--sombra-dark);
+}
+.card-curso:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+body.dark-mode .card-curso:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+.card-curso img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+.card-curso .conteudo {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.card-curso h3 {
+    margin: 0 0 0.75rem 0;
+    color: var(--laranja);
+    font-size: 1.25rem;
+}
+.progresso {
+    margin-bottom: 1rem;
+}
+.progresso span {
+    font-size: 0.85rem;
+    color: #666;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+body.dark-mode .progresso span {
+    color: #aaa;
+}
+.barra-progresso-bg {
+    background-color: var(--cinza-medio);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.barra-progresso {
+    background-color: var(--laranja);
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease-in-out;
+}
+.btn-acessar {
+    display: inline-block;
+    background-color: var(--laranja);
+    color: var(--branco);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color var(--transition-speed) ease;
+    margin-top: auto;
+}
+.btn-acessar:hover {
+    background-color: #d94e1f;
+}
+
+.suporte-section {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-top: 3rem;
+}
+.suporte-section p {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    color: #555;
+}
+body.dark-mode .suporte-section p {
+    color: #bbb;
+}
+.contatos-suporte {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.contato-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--branco);
+    color: var(--texto-light);
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+body.dark-mode .contato-item {
+    background-color: var(--cinza-escuro-card);
+    color: var(--texto-dark);
+    box-shadow: var(--sombra-dark);
+}
+.contato-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+body.dark-mode .contato-item:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+}
+.contato-item svg {
+    fill: var(--laranja);
+}
+
+.main-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    background-color: var(--cinza-medio);
+    margin-top: 4rem;
+    color: #555;
+}
+body.dark-mode .main-footer {
+    background-color: #111;
+    color: #aaa;
+}
+.main-footer a {
+    color: var(--laranja);
+    text-decoration: none;
+}
+.main-footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    .main-nav {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .main-nav a {
+        margin: 0.5rem;
+    }
+    .dark-toggle {
+        position: absolute;
+        top: 1.2rem;
+        right: 1rem;
+    }
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+    .cursos-section h2,
+    .depoimentos-section h2,
+    .suporte-section h2 {
+        font-size: 1.8rem;
+    }
+    .grid-cursos,
+    .grid-depoimentos {
+        grid-template-columns: 1fr;
+    }
+    .contatos-suporte {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    .main-header .logo {
+        height: 40px;
+    }
+    .welcome-section {
+        padding: 2rem 0.5rem;
+    }
+    .card-curso .conteudo,
+    .card-depoimento {
+        padding: 1rem;
+    }
+    .btn-acessar {
+        padding: 0.7rem 1.2rem;
+    }
+}
