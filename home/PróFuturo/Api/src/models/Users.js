@@ -59,6 +59,24 @@ class Users {
             return { validated: false, error: error.sqlMessage || error.message };
         }
     }
+
+    // Adicione este método na classe Users
+    async update(id, userData) {
+        try {
+            const result = await knex("Usuarios")
+                .where({ id_usuario: id })
+                .update(userData);
+            
+            return result > 0
+                ? { validated: true }
+                : { validated: false, error: "Nenhum registro foi atualizado" };
+        } catch (error) {
+            console.error("Erro em Users.update:", error);
+            return { validated: false, error: error.sqlMessage || error.message };
+        }
+    }
+
+
 }
 
 module.exports = new Users();

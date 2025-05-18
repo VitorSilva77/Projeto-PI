@@ -1,0 +1,28 @@
+
+.btn-editar-perfil {
+  display: inline-block;
+  background-color: #4a6cf7;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 15px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-editar-perfil:hover {
+  background-color: #3a5ce5;
+}
+
+
+.main-nav a[href="#"] {
+  color: #ff5252;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.main-nav a[href="#"]:hover {
+  color: #ff0000;
+  text-decoration: underline;
+}

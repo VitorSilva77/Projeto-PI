@@ -1,0 +1,9 @@
+npm init -y
+npm i express --save
+npm i nodemon --save
+npm i dotenv --save
+npm i --save bcryptjs
+npm install knex
+npm install mysql2
+npm i --save jsonwebtoken
+npm i cors

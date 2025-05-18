@@ -54,6 +54,58 @@ class UsersControllers {
         return res.status(201).json({ success: true, message: "Usuário criado com sucesso!", id: result.id });
     }
 
+    async updateUser(req, res) {
+        const userId = req.params.id;
+        
+        if (isNaN(userId)) {
+            return res.status(400).json({ success: false, message: "ID Inválido!" });
+        }
+
+        // Verificar se o usuário existe
+        const userResult = await Users.findById(userId);
+        if (!userResult.validated || !userResult.values) {
+            return res.status(404).json({ success: false, message: "Usuário não encontrado!" });
+        }
+
+        const userData = userResult.values;
+        const { nome, email, senha, tipo } = req.body;
+        
+        // Preparar objeto de atualização
+        const updateData = {};
+        
+        // Atualizar apenas os campos fornecidos
+        if (nome) updateData.nome = nome;
+        if (email) updateData.email = email;
+        if (tipo) updateData.tipo = tipo;
+        
+        // Se a senha foi fornecida, criar hash
+        if (senha) {
+            try {
+                updateData.senha = await bcrypt.hash(senha, 10);
+            } catch (error) {
+                console.error("Erro ao gerar hash da senha:", error);
+                return res.status(500).json({ success: false, message: "Erro interno ao processar senha." });
+            }
+        }
+
+        // Atualizar o usuário
+        const result = await Users.update(userId, updateData);
+        if (!result.validated) {
+            return res.status(500).json({ success: false, message: result.error });
+        }
+
+        return res.status(200).json({ 
+            success: true, 
+            message: "Usuário atualizado com sucesso!",
+            user: {
+                id: userId,
+                nome: updateData.nome || userData.nome,
+                email: updateData.email || userData.email,
+                tipo: updateData.tipo || userData.tipo
+            }
+        });
+    }
+
     async loginUser(req, res) {
         const { email, senha } = req.body;
 
@@ -92,4 +144,3 @@ class UsersControllers {
 }
 
 module.exports = new UsersControllers();
-

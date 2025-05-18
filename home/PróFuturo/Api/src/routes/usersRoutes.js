@@ -11,8 +11,10 @@ router.get("/:id", usersControllers.listOne);
 // Rota para criar um novo usuário (CREATE)
 router.post("/", usersControllers.createUser);
 
+// Rota para atualizar um usuário (UPDATE)
+router.put("/:id", usersControllers.updateUser);
+
 // Nova rota para login de usuário
 router.post("/login", usersControllers.loginUser);
 
 module.exports = router;
-

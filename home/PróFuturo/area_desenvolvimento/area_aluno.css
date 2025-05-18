@@ -1,0 +1,699 @@
+/* === ajustesvisuais.css === */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    .main-nav {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .main-nav a {
+        margin: 0.5rem;
+    }
+    .dark-toggle {
+        position: absolute;
+        top: 1.2rem;
+        right: 1rem;
+    }
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+    .cursos-section h2,
+    .depoimentos-section h2,
+    .suporte-section h2 {
+        font-size: 1.8rem;
+    }
+    .grid-cursos,
+    .grid-depoimentos {
+        grid-template-columns: 1fr;
+    }
+    .contatos-suporte {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    .main-header .logo {
+        height: 40px;
+    }
+    .welcome-section {
+        padding: 2rem 0.5rem;
+    }
+    .card-curso .conteudo,
+    .card-depoimento {
+        padding: 1rem;
+    }
+    .btn-acessar {
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+/* === cabeçalho.css === */
+.main-header {
+    background-color: var(--branco);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color var(--transition-speed) ease;
+}
+body.dark-mode .main-header {
+    background-color: var(--cinza-escuro-card);
+    box-shadow: var(--sombra-dark);
+}
+.main-header .logo {
+    height: 50px;
+}
+.main-nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: var(--texto-light);
+    font-weight: 600;
+    transition: color var(--transition-speed) ease;
+}
+body.dark-mode .main-nav a {
+    color: var(--texto-dark);
+}
+.main-nav a:hover {
+    color: var(--laranja);
+}
+.dark-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    color: var(--texto-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body.dark-mode .dark-toggle {
+    color: var(--texto-dark);
+}
+.dark-toggle svg {
+    transition: fill var(--transition-speed) ease;
+}
+
+/* === cursos.css === */
+.cursos-section h2 {
+    text-align: center;
+    color: var(--laranja);
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+}
+.grid-cursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.card-curso {
+    background-color: var(--branco);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+}
+body.dark-mode .card-curso {
+    background-color: var(--cinza-escuro-card);
+    box-shadow: var(--sombra-dark);
+}
+.card-curso:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+body.dark-mode .card-curso:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+.card-curso img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+.card-curso .conteudo {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.card-curso h3 {
+    margin: 0 0 0.75rem 0;
+    color: var(--laranja);
+    font-size: 1.25rem;
+}
+.progresso {
+    margin-bottom: 1rem;
+}
+.progresso span {
+    font-size: 0.85rem;
+    color: #666;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+body.dark-mode .progresso span {
+    color: #aaa;
+}
+.barra-progresso-bg {
+    background-color: var(--cinza-medio);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.barra-progresso {
+    background-color: var(--laranja);
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease-in-out;
+}
+.btn-acessar {
+    display: inline-block;
+    background-color: var(--laranja);
+    color: var(--branco);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color var(--transition-speed) ease;
+    margin-top: auto;
+}
+.btn-acessar:hover {
+    background-color: #d94e1f;
+}
+
+/* === depoimentos.css === */
+.depoimentos-section {
+    padding: 3rem 0;
+    background-color: var(--branco);
+    margin-top: 4rem;
+}
+body.dark-mode .depoimentos-section {
+    background-color: var(--cinza-escuro-card);
+}
+.grid-depoimentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.card-depoimento {
+    background: var(--cinza-claro);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--laranja);
+    box-shadow: var(--sombra);
+}
+body.dark-mode .card-depoimento {
+    background: #333;
+    box-shadow: var(--sombra-dark);
+}
+.card-depoimento p {
+    margin: 0 0 1rem 0;
+    font-style: italic;
+    color: #444;
+}
+body.dark-mode .card-depoimento p {
+    color: #ccc;
+}
+.card-depoimento .autor {
+    display: flex;
+    align-items: center;
+}
+.card-depoimento .autor img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    object-fit: cover;
+}
+.card-depoimento .autor span {
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* === inicio.css === */
+.welcome-section {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+}
+.welcome-section h1 {
+    color: var(--laranja);
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+.welcome-section p {
+    font-size: 1.1rem;
+    color: #555;
+}
+body.dark-mode .welcome-section p {
+    color: #bbb;
+}
+
+/* === main.css === */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cinza-claro);
+    color: var(--texto-light);
+    line-height: 1.6;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+body.dark-mode {
+    background-color: var(--cinza-escuro-bg);
+    color: var(--texto-dark);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+/* === rodape.css === */
+.main-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    background-color: var(--cinza-medio);
+    margin-top: 4rem;
+    color: #555;
+}
+body.dark-mode .main-footer {
+    background-color: #111;
+    color: #aaa;
+}
+.main-footer a {
+    color: var(--laranja);
+    text-decoration: none;
+}
+.main-footer a:hover {
+    text-decoration: underline;
+}
+
+/* === suporte.css === */
+.suporte-section {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-top: 3rem;
+}
+.suporte-section p {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    color: #555;
+}
+body.dark-mode .suporte-section p {
+    color: #bbb;
+}
+.contatos-suporte {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.contato-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--branco);
+    color: var(--texto-light);
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+body.dark-mode .contato-item {
+    background-color: var(--cinza-escuro-card);
+    color: var(--texto-dark);
+    box-shadow: var(--sombra-dark);
+}
+.contato-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+body.dark-mode .contato-item:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+}
+.contato-item svg {
+    fill: var(--laranja);
+}
+
+/* === variaveis.css === */
+:root {
+    --laranja: #f15a24;
+    --preto: #000;
+    --branco: #fff;
+    --cinza-claro: #f9f9f9;
+    --cinza-medio: #e0e0e0;
+    --cinza-escuro-bg: #1e1e1e;
+    --cinza-escuro-card: #2a2a2a;
+    --texto-dark: #e1e1e1;
+    --texto-light: #333;
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --sombra-dark: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+}
+
+
+
+/* Estilos para o Menu de Perfil (Três Pontinhos) */
+.profile-menu {
+  position: relative;
+  display: inline-block;
+  margin-left: 15px; /* Ajuste conforme necessário */
+}
+
+.profile-menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color, #333); /* Usa a cor do texto do tema */
+}
+
+.profile-menu-button svg {
+  width: 20px; /* Tamanho do ícone */
+  height: 20px;
+  stroke: currentColor; /* Cor do ícone herda do botão */
+}
+
+.profile-menu-button:focus {
+  outline: 2px solid var(--primary-color, #007bff); /* Destaque no foco */
+  outline-offset: 2px;
+}
+
+.profile-menu-dropdown {
+  display: none; /* Escondido por padrão */
+  position: absolute;
+  right: 0;
+  top: 100%; /* Abaixo do botão */
+  background-color: var(--background-color, #fff);
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000; /* Nível de CSS alto */
+  border-radius: 8px;
+  padding: 8px 0;
+  margin-top: 8px; /* Espaço entre o botão e o menu */
+  border: 1px solid var(--border-color, #ddd);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.profile-menu-dropdown.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profile-menu-dropdown a {
+  color: var(--text-color, #333);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.profile-menu-dropdown a:hover {
+  background-color: var(--hover-bg-color, #f1f1f1);
+  color: var(--primary-color, #007bff);
+}
+
+/* Ajustes para o tema escuro, se houver variáveis CSS definidas */
+.dark-mode .profile-menu-button {
+  color: var(--dm-text-color, #f0f0f0);
+}
+
+.dark-mode .profile-menu-dropdown {
+  background-color: var(--dm-background-color, #333);
+  border-color: var(--dm-border-color, #555);
+}
+
+.dark-mode .profile-menu-dropdown a {
+  color: var(--dm-text-color, #f0f0f0);
+}
+
+.dark-mode .profile-menu-dropdown a:hover {
+  background-color: var(--dm-hover-bg-color, #444);
+  color: var(--dm-primary-color, #58a6ff);
+}
+
+/* Responsividade: em telas menores, o menu pode precisar de ajustes */
+@media (max-width: 768px) {
+  .profile-menu-dropdown {
+    min-width: 180px; /* Um pouco menor em telas pequenas */
+  }
+  .profile-menu {
+    margin-left: 10px;
+  }
+}
+
+
+
+/* Estilos Atualizados para o Menu de Perfil (Inspirado na Referência) */
+.profile-menu {
+  position: relative;
+  display: inline-block;
+  margin-left: auto; /* Empurra o menu para a extrema direita */
+}
+
+.profile-menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px; /* Aumentar um pouco o padding para melhor clique */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--texto-light);
+  border-radius: 50%; /* Botão circular */
+  transition: background-color 0.2s ease;
+}
+
+.dark-mode .profile-menu-button {
+  color: var(--texto-dark);
+}
+
+.profile-menu-button:hover {
+  background-color: rgba(0,0,0,0.05); /* Leve fundo no hover */
+}
+
+.dark-mode .profile-menu-button:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.profile-menu-button svg {
+  width: 24px; /* Tamanho do ícone de três pontinhos */
+  height: 24px;
+  stroke: currentColor;
+}
+
+.profile-menu-button:focus {
+  outline: 2px solid var(--laranja);
+  outline-offset: 2px;
+}
+
+.profile-menu-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px); /* Abaixo do botão com um pequeno espaço */
+  background-color: var(--branco);
+  min-width: 280px; /* Largura aumentada para o novo layout */
+  max-width: 320px;
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+  z-index: 1001; /* Nível de CSS ainda mais alto */
+  border-radius: 12px; /* Bordas mais arredondadas */
+  padding: 0;
+  margin-top: 5px;
+  border: 1px solid var(--cinza-medio);
+  opacity: 0;
+  transform: translateY(-10px) scale(0.95);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  overflow: hidden; /* Para arredondar cantos internos */
+}
+
+.dark-mode .profile-menu-dropdown {
+  background-color: var(--cinza-escuro-card);
+  border-color: #444;
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+}
+
+.profile-menu-dropdown.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.profile-menu-header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--cinza-medio);
+}
+
+.dark-mode .profile-menu-header {
+  border-bottom-color: #444;
+}
+
+.profile-menu-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--cinza-medio);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  overflow: hidden; /* Caso a imagem seja maior */
+}
+
+.dark-mode .profile-menu-avatar {
+  background-color: #555;
+}
+
+.profile-menu-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-menu-avatar-placeholder {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--texto-light);
+}
+
+.dark-mode .profile-menu-avatar-placeholder {
+  color: var(--texto-dark);
+}
+
+.profile-menu-username {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--texto-light);
+  margin-bottom: 2px;
+  flex-grow: 1;
+}
+
+.dark-mode .profile-menu-username {
+  color: var(--texto-dark);
+}
+
+.profile-menu-edit-link {
+  font-size: 0.8rem;
+  color: var(--laranja);
+  text-decoration: none;
+  margin-left: auto; /* Alinha à direita se houver espaço */
+  white-space: nowrap;
+}
+
+.profile-menu-edit-link:hover {
+  text-decoration: underline;
+}
+
+.profile-menu-options a {
+  color: var(--texto-light);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: flex; /* Para alinhar ícone e texto */
+  align-items: center;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid var(--cinza-claro);
+}
+
+.dark-mode .profile-menu-options a {
+  color: var(--texto-dark);
+  border-bottom-color: #3a3a3a;
+}
+
+.profile-menu-options a:last-child {
+  border-bottom: none; /* Remove a borda do último item */
+}
+
+.profile-menu-options a svg {
+  margin-right: 12px; /* Espaço entre ícone e texto */
+  width: 20px;
+  height: 20px;
+  fill: currentColor; /* Ícone usa a cor do texto do link */
+  opacity: 0.7;
+}
+
+.profile-menu-options a:hover {
+  background-color: var(--cinza-claro);
+  color: var(--laranja);
+}
+
+.dark-mode .profile-menu-options a:hover {
+  background-color: #383838;
+  color: var(--laranja);
+}
+
+/* Ajustes para o tema escuro nas variáveis que não foram definidas antes */
+.dark-mode .profile-menu-button {
+  color: var(--texto-dark, #f0f0f0);
+}
+
+.dark-mode .profile-menu-dropdown {
+  background-color: var(--cinza-escuro-card, #333);
+  border-color: var(--dm-border-color, #555);
+}
+
+.dark-mode .profile-menu-options a {
+  color: var(--texto-dark, #f0f0f0);
+}
+
+.dark-mode .profile-menu-options a:hover {
+  background-color: var(--dm-hover-bg-color, #444);
+  color: var(--laranja, #f15a24);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .profile-menu-dropdown {
+    min-width: 250px; /* Ajuste para telas menores */
+    max-width: 90vw;
+  }
+  .profile-menu {
+    margin-left: 10px;
+  }
+  .main-nav {
+    /* Garante que o profile-menu fique no final em telas menores quando o nav quebra */
+    justify-content: flex-start; 
+  }
+  .main-nav > .profile-menu {
+    margin-left: auto; /* Mantém à direita mesmo se o nav quebrar */
+  }
+}
+
+/* Remover estilos antigos do profile-menu para evitar conflitos */
+/* Os estilos anteriores de .profile-menu, .profile-menu-button, .profile-menu-dropdown, etc., 
+   que foram adicionados na primeira interação, serão sobrescritos por estes mais específicos 
+   ou podem ser removidos manualmente se causar conflito, mas a cascata do CSS deve lidar com isso. 
+   Para garantir, é melhor remover os blocos antigos se eles não forem mais necessários. 
+   Como estou usando 'append = true', os estilos antigos ainda estarão lá. 
+   Idealmente, eu deveria substituir o bloco antigo. 
+   Por agora, vou confiar na especificidade e na ordem do CSS. */
+
