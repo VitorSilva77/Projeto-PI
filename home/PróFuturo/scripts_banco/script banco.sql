@@ -46,3 +46,13 @@ CREATE TABLE Pagamentos (
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
     FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso) ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS TokenBlacklist (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    token TEXT NOT NULL,
+    expires_at DATETIME NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Índice para melhorar a performance das consultas
+CREATE INDEX idx_token_blacklist_expires ON TokenBlacklist(expires_at);

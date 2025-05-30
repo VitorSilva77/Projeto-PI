@@ -47,3 +47,5 @@ BEGIN
 END //
 
 DELIMITER ;
+
+call Atualizar_DataWarehouse

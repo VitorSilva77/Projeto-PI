@@ -6,7 +6,7 @@ CREATE TABLE Dim_Curso (
     id_curso INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(150) NOT NULL,
     carga_horaria INT NOT NULL,
-    preco DECIMAL(10,2) NOT NULL
+    preco VARCHAR(50) NOT NULL
 );
 
 -- Tabela Dim_Aluno

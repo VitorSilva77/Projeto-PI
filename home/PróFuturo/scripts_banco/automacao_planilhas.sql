@@ -1,0 +1,13 @@
+LOAD DATA LOCAL INFILE 'G:/Meu Drive/projetopi/cursos_senai.csv'
+INTO TABLE dim_curso
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+LOAD DATA LOCAL INFILE 'G:/Meu Drive/projetopi/cursos_senac.csv'
+INTO TABLE dim_curso
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+
